@@ -1,3 +1,4 @@
 rootProject.name='StudyGameSDK'
 include ':app'
 include ':mysdk'
+include ':basemodlue'

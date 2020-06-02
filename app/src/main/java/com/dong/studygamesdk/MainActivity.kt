@@ -16,7 +16,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_github.setOnClickListener {
-            LoginManager.gitHubLogin("Iv1.fc31c78f5e934054")
+            val clientId = "Iv1.fc31c78f5e934054"
+            val clientSecret = "46df579cf5c5a9fae4294ead7a66f68e90ad3c97"
+            val callbackUrl = "https://www.pandong.site/openGithub/login.html"
+            LoginManager.gitHubLogin(clientId,clientSecret,callbackUrl,this)
         }
     }
 }

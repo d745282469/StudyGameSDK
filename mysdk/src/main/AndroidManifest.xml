@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dong.mysdk" >
+    package="com.dong.mysdk">
+
+    <application>
+        <activity android:name=".github.GithubLoginActivity"></activity>
+    </application>
+
 </manifest>

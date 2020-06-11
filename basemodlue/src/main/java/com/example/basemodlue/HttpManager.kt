@@ -2,10 +2,7 @@ package com.example.basemodlue
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.FormBody
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody
+import okhttp3.*
 import org.json.JSONObject
 import retrofit2.Retrofit
 
@@ -22,13 +19,13 @@ object HttpManager {
      * 简单get请求
      * @param url 要get的url
      */
-    suspend fun get(url: String): String? {
+    suspend fun get(url: String): ResponseBody? {
         return withContext(Dispatchers.IO) {
             val request = Request.Builder()
                 .url(url)
                 .get()
                 .build()
-            return@withContext okHttpClient.newCall(request).execute().body()?.string()
+            return@withContext okHttpClient.newCall(request).execute().body()
         }
     }
 
@@ -37,7 +34,7 @@ object HttpManager {
      * @param url 请求地址
      * @param param 请求参数
      */
-    suspend fun post(url: String, param: HashMap<String, String>): String? {
+    suspend fun post(url: String, param: HashMap<String, String>): ResponseBody? {
         return withContext(Dispatchers.IO) {
             val bodyBuilder = FormBody.Builder()
             for (key in param.keys) {
@@ -48,7 +45,7 @@ object HttpManager {
                 .post(bodyBuilder.build())
                 .header("Accept","application/json")
                 .build()
-            return@withContext okHttpClient.newCall(request).execute().body()?.string()
+            return@withContext okHttpClient.newCall(request).execute().body()
         }
 
     }

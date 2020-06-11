@@ -3,7 +3,7 @@
     package="com.dong.mysdk">
 
     <application>
-        <activity android:name=".github.GithubLoginActivity"></activity>
+
     </application>
 
 </manifest>

@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                         this@MainActivity.tv_show.text = msg
                     }
                 })
-
         }
 
         btn_github.setOnClickListener {
@@ -58,6 +57,10 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 })
+        }
+
+        btn_wechat.setOnClickListener {
+            LoginManager.wechatLogin("wx8f9a81519294482d",this)
         }
     }
 

@@ -1,7 +1,9 @@
 package com.dong.mysdk
 
 import android.app.Activity
+import android.content.Context
 import com.dong.mysdk.github.GitHubLogin
+import com.dong.mysdk.wechat.WechatLogin
 import com.dong.mysdk.zfb.ZfbLogin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -66,5 +68,10 @@ object LoginManager {
             activity
         )
         github.login(callback)
+    }
+
+    fun wechatLogin(appId: String,context:Context){
+        val wechat = WechatLogin(appId,context)
+        wechat.login()
     }
 }

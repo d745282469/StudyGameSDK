@@ -23,6 +23,14 @@
         app:layout_constraintLeft_toRightOf="@id/btn_zfb"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_wechat"
+        android:text="微信登陆"
+        app:layout_constraintLeft_toRightOf="@id/btn_github"
+        app:layout_constraintTop_toTopOf="@id/btn_github"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
